@@ -9,17 +9,17 @@ pipeline {
         }
         stage ('remove container') {
             steps {
-                sh 'docker container rm -f fe'
+                sh 'sudo docker container rm -f fe'
             }
         }
         stage ('Docker Build') {
             steps {
-                sh 'cd lms-team-1-praneeth/LMS-FE && docker build -t frontend .'
+                sh 'cd lms-team-1-praneeth/LMS-FE && sudo docker build -t frontend .'
             }
         }
         stage ('container') {
             steps {
-                sh 'docker run -dt --name fe -p 80:80 frontend'
+                sh 'sudo docker run -dt --name fe -p 80:80 frontend'
             }
         }
     }
