@@ -9,7 +9,7 @@ pipeline{
       }
       stage('Docker build backend'){
         steps{
-          sh 'cd lms-dev/lms-team-1-praneeth/LMS-BE && sudo docker build -t backend .'
+          sh 'cd LMS-BE && sudo docker build -t backend .'
         }
       }
       stage('Docker container'){
