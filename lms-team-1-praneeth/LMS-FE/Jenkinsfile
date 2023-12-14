@@ -1,0 +1,15 @@
+pipeline{
+  agent any
+  stages{
+    stage('Docker build fe'){
+    steps{
+      sh 'cd lms-team-1-praneeth/LMS-FE && sudo docker build -t frontend .'
+    }
+  }
+  stage('docker container'){
+    steps{
+      sh 'sudo docker container run --name fe -p 80:80 frontend'
+    }
+  }
+  }
+}
