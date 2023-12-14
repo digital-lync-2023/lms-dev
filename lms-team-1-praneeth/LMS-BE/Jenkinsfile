@@ -3,7 +3,7 @@ pipeline{
     stages{
       stage('dtabase container'){
         steps{
-          sh 'sudo docker container rm -f mysql'
+          # sh 'sudo docker container rm -f mysql'
           sh 'sudo container docker run -dt --name mysql-db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=P@55word mysql:latest'
         }
       }
