@@ -3,7 +3,7 @@ pipeline{
   stages{
     stage('Docker build fe'){
     steps{
-      sh 'cd lms-team-1-praneeth/LMS-FE && sudo docker build -t frontend .'
+      sh 'cd lms-team-1-praneeth/LMS-FE || exit 1 && sudo docker build -t frontend .'
     }
   }
   stage('docker container'){
